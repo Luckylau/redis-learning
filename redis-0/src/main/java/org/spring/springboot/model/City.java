@@ -3,50 +3,41 @@ package org.spring.springboot.model;
 /**
  * @author luckylau
  * @date 2017/12/13/013 9:57
+ *
+ * 业务对应的model
  */
 public class City {
     /**
-     * 城市编号
+     * 省份
      */
-    private Long id;
-
-    /**
-     * 省份编号
-     */
-    private Long provinceId;
+    private String province;
 
     /**
      * 城市名称
      */
-    private String cityName;
+    private String city;
 
     /**
      * 描述
      */
     private String description;
 
-    public Long getId() {
-        return id;
+    public transient final static int VERSION = 1;
+
+    public String getProvince() {
+        return province;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
-    public Long getProvinceId() {
-        return provinceId;
+    public String getCity() {
+        return city;
     }
 
-    public void setProvinceId(Long provinceId) {
-        this.provinceId = provinceId;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getDescription() {
@@ -55,5 +46,9 @@ public class City {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public static String generateCityCacheKey(String city){
+        return String.format("version_%s_city_%s", VERSION, city);
     }
 }

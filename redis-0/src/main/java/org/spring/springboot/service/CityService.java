@@ -1,6 +1,9 @@
 package org.spring.springboot.service;
 
+import org.spring.springboot.domain.CityEntity;
 import org.spring.springboot.model.City;
+
+import java.util.List;
 
 /**
  * @author luckylau
@@ -9,4 +12,12 @@ import org.spring.springboot.model.City;
 public interface CityService {
 
     Integer saveCity(City city);
+
+    Integer updateCity(City city);
+
+    City getCity(String cityName);
+
+    Integer deleteCity(String cityName);
+
+    List<City> getAllCity(List<String> city);
 }

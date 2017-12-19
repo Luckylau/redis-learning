@@ -72,7 +72,7 @@
             <bean class="org.spring.springboot.utils.serialize.KryoRedisSerializer">
                 <constructor-arg index="0">
                     <bean class="java.lang.Class" factory-method="forName">
-                        <constructor-arg index="0" value="org.spring.springboot.model.City"/>
+                        <constructor-arg index="0" value="org.spring.springboot.domain.CityEntity"/>
                     </bean>
                 </constructor-arg>
             </bean>

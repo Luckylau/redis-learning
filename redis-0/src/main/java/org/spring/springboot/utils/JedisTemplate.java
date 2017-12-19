@@ -30,11 +30,6 @@ public class JedisTemplate implements InitializingBean {
 
     private ClassLoader classLoader;
 
-
-    public Pipeline pipeline(){
-        return client.pipelined();
-    }
-
     public RedisSerializer getKeySerializer() {
         if(keySerializer == null ){
             keySerializer = defaultSerializer;
@@ -69,13 +64,6 @@ public class JedisTemplate implements InitializingBean {
     public Jedis initJedisCilent(){
         client = pool.getResource();
         return client;
-    }
-
-    public void closeJedisClient(){
-        if(client != null){
-            client.close();
-        }
-
     }
 
     @Override

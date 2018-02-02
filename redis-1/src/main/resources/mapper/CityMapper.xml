@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.dao.CityMapper">
+
+    <resultMap id="BaseResultMap" type="org.spring.springboot.domain.CityEntity">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="province" property="province" jdbcType="VARCHAR"/>
+        <result column="city" property="city" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        SELECT province, city, description, create_time, modify_time
+        FROM `t_city`
+    </sql>
+
+    <insert id="saveCity" parameterType="CityEntity">
+        insert into
+        `t_city`
+        (province, city, description)
+        values
+        (#{province}, #{city}, #{description})
+    </insert>
+
+    <update id="updateCity" parameterType="CityEntity">
+        UPDATE
+        `t_city`
+        <set>
+            <if test="province != null">
+                province = #{province}
+            </if>
+
+            <if test="description != null">
+                description = #{description}
+            </if>
+
+        </set>
+        WHERE
+        city = #{city}
+    </update>
+
+    <delete id="deleteCity" parameterType="String">
+        DELETE
+        FROM
+        `t_city`
+        WHERE
+        city = #{city}
+    </delete>
+
+    <select id="getCity" parameterType="String" resultType="CityEntity">
+        <include refid="Base_Column_List" />
+        WHERE
+        city = #{city}
+    </select>
+
+    <select id="getAllCity" resultMap="BaseResultMap" resultType="java.util.List">
+        <include refid="Base_Column_List" />
+        WHERE city IN
+        <foreach item = "item" index = "index" collection = "list" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+</mapper>

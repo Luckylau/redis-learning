@@ -65,7 +65,7 @@ public class RedisClient {
                     byte[] rawValue = valueSlz.serialize(value);
                     jedis.set(rawKey, rawValue);
                     if(timeout != null && unit != null){
-                        jedis.expireAt(rawKey, unit.toMillis(timeout));
+                        jedis.pexpire(rawKey, unit.toMillis(timeout));
                     }
                 }
             } catch (SerializationException e) {

@@ -58,7 +58,7 @@
     <bean id="cityJedisConnectionFactory" class="org.spring.springboot.utils.JedisPoolFactory">
         <constructor-arg index="0" ref="jedisPoolConfig" />
         <property name="host" value="${spring.redis.host}" />
-        <property name="port" value="${spring.redis.port}" />
+        <property name="port" value="${spring.redis.port}"/>
         <property name="timeout" value="${spring.redis.timeout}" />
         <property name="db" value="${spring.redis.database}" />
     </bean>
@@ -81,9 +81,9 @@
 
 
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-        <property name="maxTotal" value="1024" />
-        <property name="maxIdle" value="100" />
-        <property name="maxWaitMillis" value="100" />
+        <property name="maxTotal" value="${spring.redis.pool.max-active}" />
+        <property name="maxIdle" value="${spring.redis.pool.max-idle}" />
+        <property name="maxWaitMillis" value="${spring.redis.pool.max-wait}" />
         <property name="testOnBorrow" value="false" />
         <property name="testOnReturn" value="false" />
     </bean>

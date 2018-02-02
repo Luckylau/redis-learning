@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author liujun
+ * @author luckylau
  * @date 2018/2/1/001 19:30
  */
 

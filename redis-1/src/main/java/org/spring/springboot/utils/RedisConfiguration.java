@@ -2,6 +2,7 @@ package org.spring.springboot.utils;
 
 import org.spring.springboot.utils.serialize.KryoRedisSerializer;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -50,6 +51,7 @@ public class RedisConfiguration {
 
 
     @Bean(name = "jedisPoolConfig")
+    @ConditionalOnMissingBean
     public JedisPoolConfig jedisPoolConfig(){
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxIdle);
@@ -61,6 +63,7 @@ public class RedisConfiguration {
     }
 
     @Bean(name = "jedisConnectionFactory")
+    @ConditionalOnMissingBean
     public JedisConnectionFactory jedisConnectionFactory(){
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         jedisConnectionFactory.setHostName(host);
@@ -72,6 +75,7 @@ public class RedisConfiguration {
     }
 
     @Bean(name = "cityRedisTemplate")
+    @ConditionalOnMissingBean
     public RedisTemplate redisTemplate(){
         RedisTemplate redisTemplate = new RedisTemplate();
         redisTemplate.setConnectionFactory(jedisConnectionFactory());

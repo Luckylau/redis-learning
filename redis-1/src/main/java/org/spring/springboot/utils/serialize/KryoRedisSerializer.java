@@ -22,10 +22,6 @@ import java.io.ByteArrayOutputStream;
 public class KryoRedisSerializer<T> implements RedisSerializer<T> {
     private static final Logger logger = LoggerFactory.getLogger(KryoRedisSerializer.class);
 
-    private static final int MAX_CAPACITY = 64 * 1024;
-
-    private static final int COMPRESS_THRESHOLD = 1024;
-
     private KryoPool getKryoPool(){
         KryoFactory kryoFactory = new KryoFactory() {
             @Override

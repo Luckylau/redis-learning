@@ -80,7 +80,7 @@ public class RedisClient {
         return value;
     }
 
-    public static <K, V> List<V> mGet(JedisTemplate jedisTemplate, List<K> keys, Long timeout, TimeUnit unit){
+    public static <K, V> List<V> mGet(JedisTemplate jedisTemplate, List<K> keys){
         List<V> values = new ArrayList<V>(keys.size());
         Jedis jedis = jedisTemplate.initJedisCilent();
         RedisSerializer keySerializer = jedisTemplate.getKeySerializer();

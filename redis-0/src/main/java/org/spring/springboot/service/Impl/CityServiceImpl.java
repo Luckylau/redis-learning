@@ -99,7 +99,7 @@ public class CityServiceImpl implements CityService{
             keys.add(key);
         }
         //先从redis取数据
-        List<CityEntity> cityEntities= RedisClient.mGet(jedisTemplate, keys, 1L, TimeUnit.HOURS );
+        List<CityEntity> cityEntities= RedisClient.mGet(jedisTemplate, keys);
 
         if(cityEntities == null){
             cityEntities = new ArrayList<>();

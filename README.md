@@ -1,6 +1,8 @@
 # Redis-Learning
 ### Redis使用教程
 
+Redis的入门，见[这篇文章](http://luckylau.tech/2017/08/13/SpringBoot%E4%B9%8BRedis/)。
+
 **redis-0** 项目主要通过**单纯jedis的方式**来实现对redis的操作，封装在[RedisClient](https://github.com/Luckylau/Redis-Learning/blob/master/redis-0/src/main/java/org/spring/springboot/utils/RedisClient.java)中。
 
 这个版本的特点是：

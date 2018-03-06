@@ -22,8 +22,6 @@ public class City {
      */
     private String description;
 
-    public transient final static int VERSION = 1;
-
     public String getProvince() {
         return province;
     }
@@ -48,7 +46,4 @@ public class City {
         this.description = description;
     }
 
-    public static String generateCityCacheKey(String city){
-        return String.format("version_%s_city_%s", VERSION, city);
-    }
 }

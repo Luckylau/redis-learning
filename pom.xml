@@ -17,6 +17,7 @@
   <modules>
       <module>redis-0</module>
       <module>redis-1</module>
+      <module>redis-2</module>
   </modules>
 
   <dependencyManagement>

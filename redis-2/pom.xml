@@ -60,7 +60,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.spring.springboot.Application</mainClass>
+                    <mainClass>org.spring.springboot.Redis2</mainClass>
                 </configuration>
                 <executions>
                     <execution>

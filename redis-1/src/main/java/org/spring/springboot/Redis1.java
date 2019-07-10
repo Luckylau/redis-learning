@@ -1,17 +1,19 @@
 package org.spring.springboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Author luckylau
- * @Date 2019/7/8
+ * @author luckylau
+ * @date 2018/2/1/001 19:30
  */
 
 @SpringBootApplication
-public class Application {
+@MapperScan("org.spring.springboot.dao")
+public class Redis1 {
     public static void main(String[] args) {
         // 程序启动入口
-        SpringApplication.run(Application.class,args);
+        SpringApplication.run(Redis1.class, args);
     }
 }

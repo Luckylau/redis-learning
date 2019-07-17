@@ -39,3 +39,4 @@ Redis的入门，见[这篇文章](http://luckylau.tech/2017/08/13/SpringBoot%E4
 
 2.基于**redis集群**环境，用**jediscluster**执行lur脚本；
 
+3.logback.xml配置**logback**日志；

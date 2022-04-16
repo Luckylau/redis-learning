@@ -23,7 +23,7 @@ Redis的入门，见[这篇文章](http://luckylau.tech/2017/08/13/SpringBoot%E4
 
 1.redis的bean通过@Bean方式加载，在[RedisConfiguration](https://github.com/Luckylau/Redis-Learning/blob/master/redis-1/src/main/java/org/spring/springboot/utils/RedisConfiguration.java)中；
 
-2.mybatis访问数据库，**springboot零配置方式**，使用了alibaba的druid源，同时可以**访问监控页面**http://xxxx:8080/druid/login.html ；
+2.mybatis访问数据库，**springboot零配置方式**，使用了alibaba的druid源，同时可以**访问监控页面**http://127.0.0.1:8080/druid/login.html , 用户:admin 密码：admin；
 
 3.集成了swagger2的使用；
 

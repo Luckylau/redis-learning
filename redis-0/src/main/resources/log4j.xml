@@ -29,7 +29,7 @@
     </logger>
 
     <root>
-        <priority value="WARN" />
+        <priority value="INFO" />
         <appender-ref ref="systemLog" />
         <appender-ref ref="myConsole"/>
     </root>

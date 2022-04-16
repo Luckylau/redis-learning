@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>springboot</groupId>
-  <artifactId>springboot-redis</artifactId>
+  <artifactId>redis-learning</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
